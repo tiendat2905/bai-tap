@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <th>Amout</th>
+            <th>From Currency</th>
+            <th>To Currency</th>
+            
+            
+        </tr>
+        <tr>
+            <th>
+                <input type="tel" name="1" id="amount"></th>
+            <th><select name="country" id="From">
+                <option value="VN">VietNam</option>
+                <option value="US">USA</option>
+            </select></th> 
+            <th><select name="country" id="To">
+                <option value="VN">VietNam</option>
+                <option value="US">USA</option></th>
+                <th><button type="button" onclick="result();">Convert</button></th>   
+
+        </tr>
+        
+    </table>
+    <script>
+        let amount = document.getElementById('amount')
+        let from = document.getElementById('From')
+        let to = document.getElementById('To')
+
+        console.log(amount.value);
+        console.log(from.value);
+        console.log(to.value)
+
+        function currencyToRate(cur) {
+            if (cur === 'VN') {
+                return 23000;
+            }
+            if (cur === 'US') {
+                return 1;
+            }
+        }
+
+        function getResult(amount,toValue, fromValue){
+
+            let result=amount*toValue/fromValue
+            return result
+        }
+
+        let a = getResult(10000,2, 23000);
+
+        console.log(a);
+
+
+        // console.log(getResult(10000,'VN', 'US'));
+
+        
+        // function getResult(amount,toValue, fromValue){
+            //             100000  "VN"   "US"
+//                          100000 23000   1
+//              let toRate = currencyToRate(toValue)
+            //       23000
+//              let fromRate = currencyToRate(fromValue)
+            //       1
+        //     let result = amount * toRate / fromRate
+        //           159        10000 *  23000  /  1
+        //     return result
+                    // 159
+        // }
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th colspan="2"><input type="tel" name="" id="cot1" /></th>
+        <th colspan="2"><input type="tel" name="" id="cot2" /></th>
+      </tr>
+      <tr>
+        <th>
+          <button type="button" onclick="addition()">Addition(+)</button>
+        </th>
+        <th>
+          <button type="button" onclick="subtraction()">Subtraction(-)</button>
+        </th>
+        <th>
+          <button type="button" onclick="multiplication()">
+            Multiplication(x)
+          </button>
+        </th>
+        <th>
+          <button type="button" onclick="division()">Division(/)</button>
+        </th>
+      </tr>
+      <tr>
+        <td id="result">Kết quả</td>
+      </tr>
+    </table>
+
+    <script>
+      let a = document.getElementById("cot1");
+      let b = document.getElementById("cot2");
+      let result = document.getElementById("result");
+      console.log(cot1.value);
+      console.log(cot2.value);
+      function addition() {
+        let a = document.getElementById("cot1");
+        let b = document.getElementById("cot2");
+        let result = a + b;
+        document.write("result =" + result);
+      }
+
+      function subtraction() {
+        let a = document.getElementById("cot1");
+        let b = document.getElementById("cot2");
+        let result = a - b;
+        document.write("result =" + result);
+      }
+
+      function multiplication() {
+        let a = document.getElementById("cot1");
+        let b = document.getElementById("cot2");
+        let result = a * b;
+        document.write("result =" + result);
+      }
+
+      function division() {
+        let a = document.getElementById("cot1");
+        let b = document.getElementById("cot2");
+        let result = a / b;
+        document.write("result =" + result);
+      }
+    </script>
+  </body>
+</html>

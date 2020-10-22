@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <table>
+        <tr>
+            <td colspan="4"><input type="text" id="result" ></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="bnt" value="1" onclick="result.value += this.value" height="10px"></td>
+            <td><input type="button" class="bnt" value="2" onclick="result.value += this.value" height="10px"></td>
+            <td><input type="button" class="bnt" value="3" onclick="result.value += this.value" height="10px"></td>
+            <td><input type="button" class="bnt" value="+" onclick="result.value += this.value" height="10px"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="bnt" value="4" onclick="result.value += this.value" height="10px"></td>
+            <td><input type="button" class="bnt" value="5" onclick="result.value += this.value" height="10px"></td>
+            <td><input type="button" class="bnt" value="6" onclick="result.value += this.value" height="10px"></td>
+            <td><input type="button" class="bnt" value="-" onclick="result.value += this.value" height="10px"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="bnt" value="7" onclick="result.value += this.value" height="10px"></td>
+            <td><input type="button" class="bnt" value="8" onclick="result.value += this.value" height="10px"></td>
+            <td><input type="button" class="bnt" value="9" onclick="result.value += this.value" height="10px"></td>
+            <td><input type="button" class="bnt" value="*" onclick="result.value += this.value" height="10px"></td>
+        </tr>
+        <tr>
+            <td><input type="button" class="bnt" value="C" onclick="result.value =''" height="10px"></td>
+            <td><input type="button" class="bnt" value="0" onclick="result.value += this.value" height="10px"></td>
+            <td><input id="total" type="button" class="bnt" value="=" onclick="result.value = eval(result.value)" height="10px"></td>
+            <td><input type="button" class="bnt" value="/" onclick="result.value += this.value" height="10px"></td>
+        </tr>
+    </table>
+</body>
+</html>

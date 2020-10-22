@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="print"></div>
+    <script>
+      let x = 0;
+      let y = 1;
+      let z = 1;
+      let print = document.getElementById("print");
+      print.innerHTML = "Số fibonacci thứ 1 là: " + y + "<br>";
+      for (let i = 0; i < 19; i++) {
+        y += x;
+        x = y - x;
+        z += y
+        print.innerHTML += `Tổng 20 số đầu tiên trong dãy fibonacci là ${z} <br>`;
+      }
+    </script>
+</body>
+</html>

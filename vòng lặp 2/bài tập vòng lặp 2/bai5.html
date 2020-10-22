@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let money = parseFloat(prompt("Số tiền vay"));
+      let month = parseInt(prompt("Số tháng"));
+      let rate = parseFloat(prompt("Lãi suất"));
+
+      for (let i = 1; i <= month; i++) {
+        sum = money * rate + money;
+        document.write("Lãi suất tháng " + i + ": " + sum + "<br/>");
+        money = sum;
+      }
+    </script>
+  </body>
+</html>

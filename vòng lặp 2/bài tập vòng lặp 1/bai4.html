@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="print"></div>
+    <script>
+      let count = 0;
+      let x = 0;
+      let y = 1;
+      let print = document.getElementById("print");
+      while(count < 1) {
+        y += x;
+        x = y - x;
+        if (y % 5 == 0){
+            count++;
+        }
+        print.innerHTML = "Số đầu tiên chia hết cho 5 là: " + y
+      }
+    </script>
+</body>
+</html>

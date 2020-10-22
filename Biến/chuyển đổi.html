@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <table>
+      <tr>
+        <th>Amout</th>
+        <th>From Currency</th>
+        <th>To Currency</th>
+      </tr>
+      <tr>
+        <th>
+          <input type="number" name="1" id="amount" />
+        </th>
+        <th>
+          <select name="country" id="From">
+            <option value="VN">VietNam</option>
+            <option value="US">USA</option>
+          </select>
+        </th>
+        <th>
+          <select name="country" id="To">
+            <option value="VN">VietNam</option>
+            <option value="US">USA</option>
+          </select>
+        </th>
+        <th><button type="button" onclick="getResult()">Convert</button></th>
+      </tr>
+    </table>
+    <script>
+      let amount = document.getElementById("amount");
+      let from = document.getElementById("From");
+      let to = document.getElementById("To");
+
+      // console.log(amount.value);
+      // console.log(from.value);
+      // console.log(to.value);
+
+      function currencyToRate(cur) {
+        if (cur === "VN") {
+          return 23000;
+        }
+        if (cur === "US") {
+          return 1;
+        }
+      }
+
+      function getResult() {
+        let amountValue = Number(amount.value);
+        let toRate = currencyToRate(to.value);
+        let fromRate = currencyToRate(from.value);
+
+        let result = (amountValue * toRate) / fromRate;
+        document.write("result =" + result);
+      }
+    </script>
+  </body>
+</html>
