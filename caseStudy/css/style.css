@@ -4,7 +4,6 @@
   box-sizing: border-box;
   font-family: "Roboto", sans-serif;
   scroll-behavior: smooth;
-  width: 100%;
 }
 html {
   background-color: #ffffff;
@@ -29,6 +28,7 @@ html {
 .main-nav {
   display: flex;
   justify-content: space-between;
+  width: 100%;
 }
 
 .pc_list {
@@ -364,7 +364,6 @@ html {
   height: 28px;
   color: white;
   display: none;
-  
 }
 
 .main-nav_mobile {
