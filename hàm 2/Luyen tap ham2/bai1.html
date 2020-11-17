@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <input type="number" name="" id="input" />
+    <button type="button" onclick="Tinh()">Add</button>
+    <p id="result"></p>
+    <script>
+      function binhPhuong(num) {
+        let result = num * num;
+        return result;
+      }
+
+      function Tinh() {
+        let input = document.getElementById("input").value;
+        let resultDOM = document.getElementById("result");
+        resultDOM.innerText = `${binhPhuong(input)}`;
+      }
+    </script>
+  </body>
+</html>

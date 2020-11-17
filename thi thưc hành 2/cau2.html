@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function Kiemtra(number) {
+        while (!Number.isInteger(number) || number <= 0) {
+          let number = Number(prompt("Input repeat:"));
+        }
+        return number;
+      }
+      function isNarcissisticNumber(number) {
+        let soTuMan = String(number).split("");
+        let Tong = 0;
+        for (let resultOf of soTuMan) {
+          Tong = Tong + Math.pow(Number(resultOf), numOfNumber.length);
+        }
+        return Tong === number;
+      }
+    </script>
+  </body>
+</html>

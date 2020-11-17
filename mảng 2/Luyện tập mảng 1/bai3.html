@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [123, 34, 345, 12, 124, 345, 232, 3455, 23, 784];
+      let max = 0;
+      let count = 0;
+      for (let i = 0; i < arr.length; i++) {
+        if (arr[i] > max) {
+          max = arr[i];
+        }
+      }
+      document.write("giá trị lớn nhất là: " + max + "<br>");
+
+      for (j = 0; j < arr.length; j++) {
+        sum = count + arr[j];
+        count = sum;
+      }
+      document.write(
+        "Giá trị trung bình các phần tử trong mảng là: " + sum / j
+      );
+    </script>
+  </body>
+</html>

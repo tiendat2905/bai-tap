@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="1000px"
+      height="600px"
+      style="border: 1px solid black"
+    >
+    </canvas>
+
+    <script>
+      let canvas = document.getElementById("myCanvas");
+      let ctx = canvas.getContext("2d");
+
+      let Rectangle = function (x, y, width, height, color) {
+        this.x = x;
+        this.y = y;
+        this.width = width;
+        this.height = height;
+        this.color = color;
+
+        this.getX = function () {
+          return x;
+        };
+        this.getY = function () {
+          return y;
+        };
+        this.getWidth = function () {
+          return width;
+        };
+        this.getHeight = function () {
+          return height;
+          
+        };
+        this.getColor = function () {
+          return color;
+        };
+        this.render = function (canvas) {
+          const ctx = canvas.getContext("2d");
+          ctx.fillStyle = this.color;
+          ctx.fillRect(this.x, this.y, this.width, this.height);
+        };
+      };
+
+      const hinhChuNhat = new Rectangle(10, 10, 200, 100, "#000000");
+      hinhChuNhat.render(canvas);
+    </script>
+  </body>
+</html>

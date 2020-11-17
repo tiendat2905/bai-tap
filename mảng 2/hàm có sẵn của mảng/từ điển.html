@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Từ điển</title>
+  </head>
+  <body>
+    <form action="">
+      <input type="text" name="q" id="info" />
+      <input type="submit" value="tìm kiếm" onclick="Search(event)" />
+      <div id="result"></div>
+    </form>
+    <script>
+      const resultDOM = document.getElementById("result");
+      const infoDOM = document.getElementById("info");
+      let mang1 = ["dog", "cat", "eat", "egg", "moon", "sun"];
+      let mang2 = ["chó", "mèo", "ăn", "trứng", "trăng", "mặt trời"];
+
+      function Search(event) {
+        event.preventDefault();
+
+        let value = infoDOM.value;
+
+        let isFound = false;
+
+        for (let i = 0; i < mang1.length; i++) {
+          if (mang1[i] === value) {
+            // dog  != eat
+            resultDOM.innerText = mang2[i];
+            isFound = true;
+            break;
+          }
+        }
+
+        if (!isFound) {
+          resultDOM.innerText = "không tìm thấy";
+        }
+      }
+    </script>
+  </body>
+</html>

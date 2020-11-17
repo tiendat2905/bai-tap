@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="1000px"
+      height="600px"
+      style="border: 1px solid black"
+    >
+    </canvas>
+    <div id="ketqua"></div>
+    <button onclick="doiKichThuoc()">Doi kich thuoc</button>
+    <button onclick="hienThiKichThuoc()">'hien thi kich thuoc'</button>
+    <script>
+      const canvas = document.getElementById("myCanvas");
+
+      class Rectangle {
+        constructor(chieuDai, chieuRong) {
+          this.chieuDai = chieuDai;
+          this.chieuRong = chieuRong;
+        }
+
+        tinhChuvi() {
+          return (this.chieuDai + this.chieuRong) * 2;
+        }
+
+        tinhDienTich() {
+          return this.chieuDai * this.chieuRong;
+        }
+
+        setChieuDai(chieuDai) {
+          this.chieuDai = chieuDai;
+        }
+
+        setChieuRong(chieuRong) {
+          this.chieuRong = chieuRong;
+        }
+
+        veHinh(ctx) {
+          ctx.fillRect(20, 20, this.chieuDai, this.chieuRong);
+        }
+      }
+
+      const hinhChuNhat = new Rectangle(200, 300);
+      hinhChuNhat.veHinh(ctx);
+
+      function doiKichThuoc() {
+        let chieudai = parseInt(prompt("chieu dai"));
+        let chieurong = parseInt(prompt("chieu rong"));
+        hinhChuNhat.setChieuDai(chieudai);
+        hinhChuNhat.setChieuRong(chieurong);
+
+        ctx.clearRect(0, 0, canvas.width, canvas.height);
+        hinhChuNhat.veHinh(ctx);
+      }
+
+      function hienThiKichThuoc() {
+        let chuvi = hinhChuNhat.tinhChuvi();
+        let dientich = hinhChuNhat.tinhDienTich();
+        document.getElementById("ketqua").innerHTML =
+          "chu vi: " + chuvi + "<br>" + "dien tich: " + dientich;
+      }
+    </script>
+  </body>
+</html>

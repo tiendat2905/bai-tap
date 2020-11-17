@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function generateArray(size) {
+        let ketqua = [];
+        while (ketqua.length < size) {
+          ketqua.push(Math.floor(Math.random() * 81) + 10);
+        }
+        return ketqua;
+      }
+      
+      function printArray(arr) {
+        document.write(arr.join("-") + "</br>");
+      }
+      
+      function isPrime(number) {
+        if (number < 2 || !Number.isInteger(number)) return false;
+        for (let i = 2; i < Math.sqrt(number); i++) {
+          if (number % i === 0) return false;
+        }
+        return true;
+      }
+      
+      function printPrimes(arr) {
+        let result = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (isPrime(arr[i])) {
+            result.push(arr[i]);
+          }
+        }
+        return result;
+      }
+      
+      function sumPrimes(arr) {
+        let sum = 0;
+        for (let i = 0; i < arr.length; i++) {
+          if (isPrime(arr[i])) {
+            sum = sum + arr[i];
+          }
+          return sum;
+        }
+        return -1;
+      }
+      
+      function kiemTra(size) {
+        while (!Number.isInteger(size) || size <= 0) {
+          let size = Number(prompt("Input repeat:"));
+        }
+        return size;
+      }
+      
+      
+      function main() {
+        let size = Number(prompt("nhập số:"));
+        kiemTra(size);
+        let arr = generateArray(size);
+        printArray(arr);
+        let ketqua = printPrimes(arr);
+        console.log(ketqua);
+        document.write(ketqua.join(",") + "</br>");
+        document.write(sumPrimes(ketqua));
+      }
+      main();
+    </script>
+  </body>
+</html>

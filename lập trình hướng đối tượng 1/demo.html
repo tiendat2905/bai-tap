@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <canvas
+      id="myCanvas"
+      width="1000px"
+      height="600px"
+      style="border: 1px solid black"
+    >
+    </canvas>
+
+    <script>
+      // khong nen xai
+      function Rectangle1(chieuDai, chieuRong) {
+        this.chieuDai = chieuDai;
+        this.chieuRong = chieuRong;
+
+        this.tinhChuVi = function () {
+          return (this.chieuDai + this.chieuRong) * 2;
+        };
+      }
+
+      let hinh1 = new Rectangle1(20, 10);
+      console.log(hinh1);
+
+      // nen xai nhung phuc tap
+      function Rectangle2(chieuDai, chieuRong) {
+        this.chieuDai = chieuDai;
+        this.chieuRong = chieuRong;
+      }
+
+      Rectangle2.prototype.tinhChuVi = function () {
+        return (this.chieuDai + this.chieuRong) * 2;
+      };
+
+      let hinh2 = new Rectangle2(100, 200);
+      console.log(hinh2);
+
+      // moi, tien
+      class RectangleClass {
+        constructor(chieuDai, chieuRong) {
+          this.chieuDai = chieuDai;
+          this.chieuRong = chieuRong;
+        }
+
+        tinhChuVi() {
+          return (this.chieuDai + this.chieuRong) * 2;
+        }
+      }
+
+      let hinh3 = new RectangleClass(1000, 2000);
+      console.log(hinh3);
+    </script>
+  </body>
+</html>

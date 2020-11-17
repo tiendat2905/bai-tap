@@ -1,0 +1,41 @@
+@media only screen and (max-width: 46.1875em) {
+  .grid-container {
+    display: block;
+  }
+  .showcase {
+    height: 676px;
+    background-color: red;
+    background: black url("../picture/iphon12pro.jpg") no-repeat center top /
+      200%;
+    text-align: center;
+    color: #fff;
+  }
+  .iPadAir {
+    background: red;
+    height: 548px;
+    background: url("../picture/ipad-air-doc.jpg") no-repeat center bottom/ 200%;
+    text-align: center;
+    color: black;
+    background-color: rgb(251, 251, 253);
+    padding: 40px;
+    margin: 10px;
+  }
+  .iPadAir h3 {
+    font-size: 20px;
+    margin-top: 150%;
+  }
+  .iPadAir h1 {
+    display: none;
+  }
+
+  .grid-containertext {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .nav_bars-btn {
+    display: block;
+    margin-left: -360px;
+  }
+  .main-nav {
+    display: none;
+  }
+}

@@ -7,10 +7,13 @@
   </head>
   <body>
     <script>
-      let myColor = ["Red", "Green", "White", "Black"];
-      console.log(myColor.toString());
-      console.log(myColor.join());
-      console.log(myColor.join("+"));
+      function add(a, b, c) {
+        return a < b && a < c ? a : b < c ? b : c;
+      }
+      let so1 = parseInt(prompt());
+      let so2 = parseInt(prompt());
+      let so3 = parseInt(prompt());
+      document.write(add(so1, so2, so3));
     </script>
   </body>
 </html>

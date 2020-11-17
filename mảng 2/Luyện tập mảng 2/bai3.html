@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [];
+      let count = 0;
+      for (let i = 0; i < 3; i++) {
+        let a = prompt("nhập ký tự");
+        arr.push(a);
+      }
+      for (let j = 0; j < arr.length; j++) {
+        arr[j] = Number(arr[j]);
+        if (!Number.isNaN(arr[j])) {
+          count++;
+        }
+      }
+      document.write(count);
+    </script>
+  </body>
+</html>

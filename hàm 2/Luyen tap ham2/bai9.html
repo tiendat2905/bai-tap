@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      let arr = [];
+      for (let i = 0; i < 3; i++) {
+        let b = prompt("ky tu");
+        arr.push(b);
+      }
+
+      let c = prompt();
+      let count = 0;
+      function check(a, count) {
+        for (let i = 0; i < arr.length; i++) {
+          if (a === arr[i]) {
+            count++;
+          }
+        }
+        if (count === 0) {
+          count = -1;
+        }
+        return count;
+      }
+      check(c);
+      console.log(check(c, count));
+    </script>
+  </body>
+</html>

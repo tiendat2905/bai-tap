@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <style>
+    table {
+      border-collapse: collapse;
+    }
+    tr,
+    td {
+      width: 30px;
+      height: 30px;
+      border: 1px solid black;
+    }
+    tr > td {
+      text-align: center;
+    }
+  </style>
+  <body>
+    <h3>Caro Game</h3>
+    <div id="caro"></div>
+
+    <!--<table></table>-->
+    <script>
+      let board = document.getElementById("caro");
+      board.addEventListener("click", insertValue);
+      let data = "";
+
+      function initTable() {
+        data += "<table><tbody>";
+        for (let i = 0; i < 3; i++) {
+          data += "<tr>";
+          for (let j = 0; j < 3; j++) {
+            data += "<td id=" + i + "_" + j + "></td>";
+          }
+          data += "</tr>";
+        }
+        data += "</tbody></table>";
+        board.innerHTML += data;
+      }
+
+      let arr = [[], [], []];
+      for (let i = 0; i < 3; i++) {
+        for (let j = 0; j < 3; j++) {
+          arr[i][j] = 0;
+        }
+      }
+
+      let player = 1;
+      function insertValue(e) {
+        const idValue = e.target.id.split("_");
+
+        const i = idValue[0];
+        const j = idValue[1];
+
+        if (player % 2 == 0) {
+          arr[parseInt(i)][parseInt(j)] = 1;
+          e.target.innerHTML = "O";
+        } else {
+          arr[parseInt(i)][parseInt(j)] = 2;
+          e.target.innerHTML = "X";
+        }
+
+        player++;
+        checkBoard();
+      }
+
+      function checkCells(cell1, cell2, cell3) {
+        if (cell1 !== 0 && cell1 == cell2 && cell1 == cell3) {
+          alert(cell1 === 1 ? "O win" : "X win");
+        }
+      }
+
+      let win = false;
+      function checkBoard() {
+        for (let i = 0; i < 3; i++) {
+          checkCells(arr[i][0], arr[i][1], arr[i][2]);
+          checkCells(arr[0][i], arr[1][i], arr[2][i]);
+        }
+
+        checkCells(arr[0][0], arr[1][1], arr[2][2]);
+        checkCells(arr[2][0], arr[1][1], arr[0][2]);
+      }
+      initTable();
+    </script>
+  </body>
+</html>

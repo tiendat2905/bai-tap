@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      //   let str = "The Quick Brown Fox";
+      //   let UPPER = "ABCDEFGHJKLMNOPQRSTUVWXYZ";
+      //   let LOWER = "abcdefghjklmnopqrstuvwxyz";
+      //   let result = [];
+
+      //   for (let i = 0; i < str.length; i++) {
+      //     if (UPPER.indexOf(str[i]) !== -1) {
+      //       result.push(str[i].toLowerCase());
+      //     } else if (LOWER.indexOf(str[i]) !== -1) {
+      //       result.push(str[i].toUpperCase());
+      //     } else {
+      //       result.push(str[i]);
+      //     }
+      //     document.write(result.join(""));
+      //   }
+
+      let str = prompt("Nhập dãy chữ");
+      let result = [];
+
+      for (let i = 0; i < str.length; i++) {
+        if (str[i].toUpperCase() === str[i]) {
+          result.push(str[i].toLowerCase());
+        } else {
+          result.push(str[i].toUpperCase());
+        }
+      }
+      document.write(result.join(""));
+    </script>
+  </body>
+</html>

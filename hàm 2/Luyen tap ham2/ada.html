@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <script>
+      function generateArray(size) {
+        let result = [];
+        while (result.length < size) {
+          result.push(Math.floor(Math.random() * 81) + 10);
+        }
+        return result;
+      }
+
+      function printArray(arr) {
+        return arr.join("-");
+      }
+
+      function find(value, arr) {
+        return arr.indexOf(value);
+      }
+
+      function removeAll(value, arr) {
+        if (arr.indexOf(value) === -1) return arr;
+        var result = [];
+        for (let i = 0; i < arr.length; i++) {
+          if (arr[i] !== value) {
+            result.push(arr[i]);
+          }
+        }
+        arr = result;
+        return arr;
+      }
+
+      function getPositiveInteger(message) {
+        let num = -1;
+        while (!Number.isInteger(num) || num < 0) {
+          num = Number(prompt(message));
+        }
+        return num;
+      }
+      function main() {
+        let size = getPositiveInteger("Nhập size:");
+        let array = generateArray(size);
+        alert("Array: " + printArray(array));
+        let value = getPositiveInteger(
+          "nhập value muốn xóa ra khỏi mảng array"
+        );
+        let arrayAfterRemove = removeAll(value, array);
+        alert(`Array after remove ${value}: ${printArray(arrayAfterRemove)}`);
+      }
+      main();
+    </script>
+  </body>
+</html>

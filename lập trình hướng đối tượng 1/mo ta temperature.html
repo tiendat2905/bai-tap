@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div id="ketqua"></div>
+    <button onclick="hienThiKetQua()">Result</button>
+    <script>
+      class Temperature {
+        constructor(doC) {
+          this.doC = doC;
+        }
+        tinhDoF() {
+          return this.doC * 1.8 + 32;
+        }
+        tinhDoK() {
+          return this.doC + 273.15;
+        }
+        getDoC() {
+          return this.doC;
+        }
+      }
+
+      let nhietDo = new Temperature(25);
+
+      function hienThiKetQua() {
+        let doF = nhietDo.tinhDoF();
+        let doK = nhietDo.tinhDoK();
+        document.getElementById("ketqua").innerHTML =
+          "Độ F: " + doF + "<br>" + "Độ K: " + doK;
+      }
+    </script>
+  </body>
+</html>
